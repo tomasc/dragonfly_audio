@@ -1,6 +1,6 @@
 # Dragonfly Audio
 
-[![Build Status](https://travis-ci.org/tomasc/fragonfly_audio.svg)](https://travis-ci.org/tomasc/fragonfly_audio) [![Gem Version](https://badge.fury.io/rb/fragonfly_audio.svg)](http://badge.fury.io/rb/fragonfly_audio) [![Coverage Status](https://img.shields.io/coveralls/tomasc/fragonfly_audio.svg)](https://coveralls.io/r/tomasc/mongoid_recurring)
+[![Build Status](https://travis-ci.org/tomasc/dragonfly_audio.svg)](https://travis-ci.org/tomasc/dragonfly_audio) [![Gem Version](https://badge.fury.io/rb/dragonfly_audio.svg)](http://badge.fury.io/rb/dragonfly_audio) [![Coverage Status](https://img.shields.io/coveralls/tomasc/dragonfly_audio.svg)](https://coveralls.io/r/tomasc/mongoid_recurring)
 
 Wraps common audio-related tasks into [Dragonfly](http://markevans.github.io/dragonfly) analysers and processors.
 
