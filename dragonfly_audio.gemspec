@@ -6,8 +6,8 @@ require 'dragonfly_audio/version'
 Gem::Specification.new do |spec|
   spec.name          = "dragonfly_audio"
   spec.version       = DragonflyAudio::VERSION
-  spec.authors       = ["Tomas Celizna"]
-  spec.email         = ["tomas.celizna@gmail.com"]
+  spec.authors       = ["Tomas Celizna", "Asger Behncke Jacobsen"]
+  spec.email         = ["tomas.celizna@gmail.com", "asger@8kilo.com"]
   spec.summary       = %q{Wraps common audio-related tasks into Dragonfly analysers and processors.}
   spec.homepage      = "https://github.com/tomasc/dragonfly_audio"
   spec.license       = "MIT"
