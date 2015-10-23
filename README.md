@@ -32,6 +32,8 @@ end
 
 ## Analysers
 
+* audio_properties
+
 ## Processors
 
 ## Contributing
