@@ -5,16 +5,15 @@ require 'taglib'
 module DragonflyAudio
   module Analysers
     class AudioProperties
-
       def call content
         taglib_fileref(content)
       end
 
       private # =============================================================
 
-      def taglib_fileref temp_object
+      def taglib_fileref content
         res = {}
-        TagLib::FileRef.open(temp_object.path) do |fileref|
+        TagLib::FileRef.open(content.path) do |fileref|
           unless fileref.null?
 
             # TODO: simplify me!
