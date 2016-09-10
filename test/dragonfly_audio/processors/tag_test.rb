@@ -1,32 +1,23 @@
 require 'test_helper'
 
-module DragonflyAudio
-  module Processors
-    describe Tag do
-      let(:app) { test_app.configure_with(:audio) }
-      let(:audio) { app.fetch_file(SAMPLES_DIR.join('BroadmoorSirenTest.mp3')) }
+describe DragonflyAudio::Processors::Tag do
+  let(:app) { test_app.configure_with(:audio) }
+  let(:processor) { DragonflyAudio::Processors::Tag.new }
+  let(:analyser) { DragonflyAudio::Analysers::AudioProperties.new }
+  let(:audio) { Dragonfly::Content.new(app, SAMPLES_DIR.join('BroadmoorSirenTest.mp3')) }
 
-      # ---------------------------------------------------------------------
+  let(:artist) { 'Elvis Presley' }
+  let(:title) { 'Hound Dawg' }
 
-      describe 'artist' do
-        it 'changes the artist tag property' do
-          skip 'this currently changes the file directly'
-          audio.tag(artist: 'Elvis Presley').artist.must_equal 'Elvis Presley'
-        end
-      end
+  before { processor.call(audio, artist: artist, title: title) }
 
-      describe 'title' do
-        it 'changes the title tag property' do
-          skip 'this currently changes the file directly'
-          audio.tag(title: 'Hound Dawg').title.must_equal 'Hound Dawg'
-        end
-      end
+  describe 'properties' do
+    it 'sets the artist tag property' do
+      analyser.call(audio)[:artist].must_equal artist
+    end
 
-      describe 'properties' do
-        it 'does not try to set "wrong" properties' do
-          skip 'this currently changes the file directly, also not sure how to test this correctly'
-        end
-      end
+    it 'sets the title tag property' do
+      analyser.call(audio)[:title].must_equal title
     end
   end
 end
