@@ -2,11 +2,8 @@ require 'test_helper'
 
 module DragonflyAudio
   describe Plugin do
-
     let(:app) { test_app.configure_with(:audio) }
     let(:audio) { app.fetch_file(SAMPLES_DIR.join('BroadmoorSirenTest.mp3')) }
-
-    # ---------------------------------------------------------------------
 
     describe 'analysers' do
       it 'adds #audio_properties' do
@@ -17,7 +14,7 @@ module DragonflyAudio
         DragonflyAudio::Analysers::AudioProperties::TAGS,
         DragonflyAudio::Analysers::AudioProperties::AUDIO_PROPS
       ].flatten.each do |analyser|
-        it "adds ##{analyser.to_s}" do
+        it "adds ##{analyser}" do
           audio.must_respond_to analyser
         end
       end
@@ -28,6 +25,5 @@ module DragonflyAudio
         audio.must_respond_to :tag
       end
     end
-
   end
 end

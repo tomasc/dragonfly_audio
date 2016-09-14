@@ -7,15 +7,11 @@ require 'minitest/spec'
 require 'dragonfly'
 require 'dragonfly_audio'
 
-# ---------------------------------------------------------------------
-
 SAMPLES_DIR = Pathname.new(File.expand_path('../../samples', __FILE__))
 
-# ---------------------------------------------------------------------
-
-def test_app name=nil
+def test_app(name = nil)
   app = Dragonfly::App.instance(name)
   app.datastore = Dragonfly::MemoryDataStore.new
-  app.secret = "test secret"
+  app.secret = 'test secret'
   app
 end

@@ -3,7 +3,7 @@ require 'dragonfly_audio/processors/tag'
 
 module DragonflyAudio
   class Plugin
-    def call app, opts={}
+    def call(app, _opts = {})
       app.add_analyser :audio_properties, DragonflyAudio::Analysers::AudioProperties.new
 
       [
