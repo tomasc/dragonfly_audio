@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    dragonfly_audio (0.0.1)
+    dragonfly_audio (0.0.2)
       dragonfly (~> 1.0)
       taglib-ruby
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
+    addressable (2.4.0)
     coderay (1.1.0)
     dragonfly (1.0.12)
       addressable (~> 2.3)
@@ -35,7 +35,7 @@ GEM
     lumberjack (1.0.9)
     method_source (0.8.2)
     minitest (5.8.1)
-    multi_json (1.11.2)
+    multi_json (1.12.1)
     nenv (0.2.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
@@ -44,14 +44,14 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rack (1.6.4)
+    rack (2.0.1)
     rake (10.4.2)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     shellany (0.0.1)
     slop (3.6.0)
-    taglib-ruby (0.7.0)
+    taglib-ruby (0.7.1)
     thor (0.19.1)
 
 PLATFORMS
@@ -66,4 +66,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
