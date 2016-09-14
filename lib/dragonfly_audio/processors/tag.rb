@@ -5,7 +5,7 @@ require 'taglib'
 module DragonflyAudio
   module Processors
     class Tag
-      PERMISSIBLE_PROPERTIES = %i(album artist comment genre tag title track year).freeze
+      PERMISSIBLE_PROPERTIES = DragonflyAudio::Analysers::AudioProperties::TAGS
 
       def call(content, properties)
         clean_properties = properties.delete_if { |key, _| !PERMISSIBLE_PROPERTIES.include?(key) }

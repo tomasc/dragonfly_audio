@@ -13,19 +13,10 @@ module DragonflyAudio
         audio.must_respond_to :audio_properties
       end
 
-      %i(
-        album
-        artist
-        bitrate
-        channels
-        comment
-        genre
-        length
-        sample_rate
-        title
-        track
-        year
-      ).each do |analyser|
+      [
+        DragonflyAudio::Analysers::AudioProperties::TAGS,
+        DragonflyAudio::Analysers::AudioProperties::AUDIO_PROPS
+      ].flatten.each do |analyser|
         it "adds ##{analyser.to_s}" do
           audio.must_respond_to analyser
         end

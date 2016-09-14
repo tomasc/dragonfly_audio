@@ -6,19 +6,10 @@ module DragonflyAudio
     def call app, opts={}
       app.add_analyser :audio_properties, DragonflyAudio::Analysers::AudioProperties.new
 
-      %i(
-        album
-        artist
-        bitrate
-        channels
-        comment
-        genre
-        length
-        sample_rate
-        title
-        track
-        year
-      ).each do |analyser|
+      [
+        DragonflyAudio::Analysers::AudioProperties::TAGS,
+        DragonflyAudio::Analysers::AudioProperties::AUDIO_PROPS
+      ].flatten.each do |analyser|
         app.add_analyser analyser do |content|
           content.analyse(:audio_properties)[analyser]
         end
