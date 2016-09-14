@@ -38,8 +38,9 @@ end
 
 Reads properties and tags of an audio file:
 
-```
+```ruby
 audio.audio_properties
+
 # => {
 #   title: 'The Ship Was Sailing',
 #   artist: 'Vito Ricci',
@@ -61,7 +62,7 @@ audio.audio_properties
 
 Sets the file's meta information:
 
-```
+```ruby
 audio.tag(artist: 'Ariel Kalma', album: 'Le Temps Des Moissons', track: 'Bakafrika')
 ```
 
