@@ -76,7 +76,7 @@ Permissible properties:
 * track
 * year
 
-### album art
+### album_art
 
 Sets the file's album art:
 
