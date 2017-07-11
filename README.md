@@ -84,7 +84,7 @@ Sets the file's album art:
 audio.album_art('path_to_file')
 ```
 
-Note thate this oly works for mp3 files.
+Note thate this only works for mp3 files.
 
 ## Contributing
 
