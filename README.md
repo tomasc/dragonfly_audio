@@ -76,6 +76,16 @@ Permissible properties:
 * track
 * year
 
+### album art
+
+Sets the file's album art:
+
+```ruby
+audio.album_art('path_to_file')
+```
+
+Note thate this oly works for mp3 files.
+
 ## Contributing
 
 1. Fork it ( https://github.com/tomasc/dragonfly_audio/fork )
