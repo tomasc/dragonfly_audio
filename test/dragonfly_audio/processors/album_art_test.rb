@@ -3,7 +3,6 @@ require 'test_helper'
 describe DragonflyAudio::Processors::AlbumArt do
   let(:app) { test_app.configure_with(:audio) }
   let(:processor) { DragonflyAudio::Processors::AlbumArt.new }
-  let(:analyser) { DragonflyAudio::Analysers::AudioProperties.new }
   let(:audio) { Dragonfly::Content.new(app, SAMPLES_DIR.join('BroadmoorSirenTest.mp3')) }
   let(:image) { Dragonfly::Content.new(app, SAMPLES_DIR.join('album.jpg')) }
 
