@@ -1,5 +1,6 @@
 require 'dragonfly_audio/analysers/audio_properties'
 require 'dragonfly_audio/processors/tag'
+require 'dragonfly_audio/processors/album_art'
 
 module DragonflyAudio
   class Plugin
@@ -16,6 +17,7 @@ module DragonflyAudio
       end
 
       app.add_processor :tag, DragonflyAudio::Processors::Tag.new
+      app.add_processor :album_art, DragonflyAudio::Processors::AlbumArt.new
     end
   end
 end
