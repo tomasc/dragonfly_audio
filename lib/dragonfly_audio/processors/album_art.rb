@@ -6,9 +6,9 @@ require 'rack'
 module DragonflyAudio
   module Processors
     class AlbumArt
-      def call(content, properties)
-        return unless content.mime_type == 'audio/mpeg'
-        return unless album_art_file = properties
+      def call(content, album_art_file)
+        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext)
+        # raise UnsupportedFormat unless content.mime_type == 'audio/mpeg'
 
         tempfile = content.temp_object
 

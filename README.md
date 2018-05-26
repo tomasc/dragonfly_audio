@@ -32,6 +32,14 @@ Dragonfly.app.configure do
 end
 ```
 
+## Supported Formats
+
+List of supported formats is available as:
+
+```ruby
+DragonflyAudio::SUPPORTED_FORMATS # => ["aif", "aiff", …]
+```
+
 ## Analysers
 
 ### audio_properties
