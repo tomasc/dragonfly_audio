@@ -20,4 +20,8 @@ describe DragonflyAudio::Processors::AlbumArt do
 
     it { picture.must_equal image.data }
   end
+
+  describe 'tempfile has extension' do
+    it { content.tempfile.path.must_match /\.mp3\z/i }
+  end
 end
