@@ -5,21 +5,21 @@ require 'taglib'
 module DragonflyAudio
   module Processors
     class Tag
-      PERMISSIBLE_PROPERTIES = DragonflyAudio::Analysers::AudioProperties::TAGS
+      PERMISSIBLE_PROPERTIES = Analysers::AudioProperties::TAGS
 
       def call(content, properties)
-        clean_properties = properties.delete_if { |key, _| !PERMISSIBLE_PROPERTIES.include?(key) }
+        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext)
+
+        # stringify keys
+        properties = properties.each_with_object({}) { |(k, v), memo| memo[k.to_s] = v }
+        properties = properties.select { |key, _| PERMISSIBLE_PROPERTIES.include?(key) }
 
         tempfile = Dragonfly::TempObject.new(content.tempfile)
 
         TagLib::FileRef.open(tempfile.path) do |file|
-          unless file.null?
-            tag = file.tag
-            clean_properties.each do |key, value|
-              tag.send("#{key}=", value)
-            end
-            file.save
-          end
+          return if file.null?
+          properties.each { |k, v| file.tag.send("#{k}=", v) }
+          file.save
         end
 
         content.update(tempfile)

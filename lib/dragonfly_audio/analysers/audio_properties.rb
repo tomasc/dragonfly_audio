@@ -5,29 +5,20 @@ require 'taglib'
 module DragonflyAudio
   module Analysers
     class AudioProperties
-      TAGS = %i(title artist album year track genre comment).freeze
-      AUDIO_PROPS = %i(length bitrate channels sample_rate).freeze
+      TAGS = %w[title artist album year track genre comment].freeze
+      AUDIO_PROPS = %w[length bitrate channels sample_rate].freeze
 
       def call(content)
-        taglib_fileref(content)
-      end
+        return {} unless SUPPORTED_FORMATS.include?(content.ext)
 
-      private # =============================================================
-
-      def taglib_fileref(content)
         res = {}
+
         TagLib::FileRef.open(content.path) do |fileref|
-          unless fileref.null?
-
-            TAGS.each do |tag_name|
-              res[tag_name] = fileref.tag.send(tag_name)
-            end
-
-            AUDIO_PROPS.each do |prop_name|
-              res[prop_name] = fileref.audio_properties.send(prop_name)
-            end
-          end
+          return if fileref.null?
+          TAGS.each { |n| res[n] = fileref.tag.send(n) }
+          AUDIO_PROPS.each { |n| res[n] = fileref.audio_properties.send(n) }
         end
+
         res
       end
     end

@@ -2,23 +2,26 @@ require 'test_helper'
 
 describe DragonflyAudio::Processors::AlbumArt do
   let(:app) { test_app.configure_with(:audio) }
-  let(:processor) { DragonflyAudio::Processors::AlbumArt.new }
-  let(:audio) { Dragonfly::Content.new(app, SAMPLES_DIR.join('BroadmoorSirenTest.mp3')) }
+  let(:content) { Dragonfly::Content.new(app, SAMPLES_DIR.join('sample.mp3')) }
   let(:image) { Dragonfly::Content.new(app, SAMPLES_DIR.join('album.jpg')) }
+  let(:processor) { DragonflyAudio::Processors::AlbumArt.new }
 
   let(:artist) { 'Elvis Presley' }
   let(:title) { 'Hound Dawg' }
 
-  before { processor.call(audio, image.file.path) }
+  before { processor.call(content, image.file.path) }
 
   describe 'properties' do
-    it 'sets the album art' do
-      TagLib::MPEG::File.open(audio.file.path) do |file|
-        tag = file.id3v2_tag
-
-        cover = tag.frame_list('APIC').first
-        cover.picture.must_equal image.data
+    let(:picture) do
+      TagLib::MPEG::File.open(content.file.path) do |file|
+        file.id3v2_tag.frame_list('APIC').first.picture
       end
     end
+
+    it { picture.must_equal image.data }
+  end
+
+  describe 'tempfile has extension' do
+    it { content.tempfile.path.must_match /\.mp3\z/i }
   end
 end
