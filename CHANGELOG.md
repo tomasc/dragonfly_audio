@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.0
+## 1.0.0
 
 * add `SUPPORTED_FORMATS` and and raise errors when not matching
 * add more thorough tests for supported formats
