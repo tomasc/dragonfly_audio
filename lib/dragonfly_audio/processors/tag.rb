@@ -8,7 +8,8 @@ module DragonflyAudio
       PERMISSIBLE_PROPERTIES = Analysers::AudioProperties::TAGS
 
       def call(content, properties)
-        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext)
+        raise UnsupportedFormat unless content.ext
+        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext.downcase)
 
         # stringify keys
         properties = properties.each_with_object({}) { |(k, v), memo| memo[k.to_s] = v }

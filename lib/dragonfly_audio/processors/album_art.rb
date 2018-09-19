@@ -7,7 +7,8 @@ module DragonflyAudio
   module Processors
     class AlbumArt
       def call(content, album_art_file)
-        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext)
+        raise UnsupportedFormat unless content.ext
+        raise UnsupportedFormat unless SUPPORTED_FORMATS.include?(content.ext.downcase)
         # raise UnsupportedFormat unless content.mime_type == 'audio/mpeg'
 
         tempfile = content.temp_object

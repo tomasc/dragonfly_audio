@@ -9,7 +9,8 @@ module DragonflyAudio
       AUDIO_PROPS = %w[length bitrate channels sample_rate].freeze
 
       def call(content)
-        return {} unless SUPPORTED_FORMATS.include?(content.ext)
+        return {} unless content.ext
+        return {} unless SUPPORTED_FORMATS.include?(content.ext.downcase)
 
         res = {}
 
