@@ -6,7 +6,7 @@ module DragonflyAudio
   module Analysers
     class AudioProperties
       TAGS = %w[title artist album year track genre comment].freeze
-      AUDIO_PROPS = %w[length bitrate channels sample_rate].freeze
+      AUDIO_PROPS = %w[length_in_seconds length_in_milliseconds bitrate channels sample_rate].freeze
 
       def call(content)
         return {} unless content.ext
