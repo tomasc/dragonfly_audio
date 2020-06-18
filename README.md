@@ -58,6 +58,8 @@ audio.audio_properties
 #   genre: 'Ambient',
 #   comment: 'This Music was originally composed for "The Memory Theatre of Gulio Camillo" by Matthew Maguire. A Creation production premiered at La Mama Spring 1985 thanks to Bonnie for not laughing to Justin for laughing to Jon Gordron for electronic bondage produced by Jonathan Mann for Pangea Productions recorded 8/85 at Chiens Interdits Studio in a big cover production by Ann Rower cover design by Paul Leone * all compositions by Vito Ricci * play it loud',
 #   length: 345,
+#   length_in_seconds: 345,
+#   length_in_milliseconds: 345000,
 #   bitrate: 192,
 #   channels: 2,
 #   sample_rate: 44_100
