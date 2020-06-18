@@ -19,6 +19,8 @@ module DragonflyAudio
           TAGS.each { |n| res[n] = fileref.tag.send(n) }
           AUDIO_PROPS.each { |n| res[n] = fileref.audio_properties.send(n) }
         end
+        
+        res["length"] = res["length_in_seconds"]
 
         res
       end
