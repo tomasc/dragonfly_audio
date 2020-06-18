@@ -2,7 +2,7 @@ language: ruby
 cache: bundler
 script: "bundle exec rake"
 rvm:
-  - 2.7.1
+  - 2.4.1
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libtag1-dev
