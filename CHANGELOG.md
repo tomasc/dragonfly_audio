@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.0
+
+- support `taglib-ruby` `1.0` – [@asgerb](https://github.com/asgerb).
+- added `length_in_seconds` and `length_in_milliseconds` to `AudioProperties` – [@asgerb](https://github.com/asgerb).
+
 ## 1.0.3
 
 - locked `taglib-ruby` to `~> 0.7.1` – [@asgerb](https://github.com/asgerb).
