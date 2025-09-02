@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: Install taglib
         run: sudo apt-get install libtag1-dev
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 3.4.5
           bundler-cache: true
       - name: Run tests
         run: bundle exec rake
