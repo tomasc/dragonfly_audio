@@ -7,12 +7,12 @@ Gem::Specification.new do |spec|
   spec.name          = 'dragonfly_audio'
   spec.version       = DragonflyAudio::VERSION
   spec.authors       = ['Tomas Celizna', 'Asger Behncke Jacobsen']
-  spec.email         = ['tomas.celizna@gmail.com', 'asger@8kilo.com']
+  spec.email         = ['tomas.celizna@gmail.com', 'a@asgerbehnckejacobsen.dk']
   spec.summary       = 'Wraps common audio-related tasks into Dragonfly analysers and processors.'
   spec.homepage      = 'https://github.com/tomasc/dragonfly_audio'
   spec.license       = 'MIT'
 
-  spec.files            = Dir["CHANGELOG.md", "MIT-LICENSE", "README.md", "lib/**/*"]
+  spec.files         = Dir["CHANGELOG.md", "MIT-LICENSE", "README.md", "lib/**/*"]
   spec.require_paths = 'lib'
 
   spec.add_dependency 'dragonfly', '~> 1.0'
