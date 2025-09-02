@@ -16,11 +16,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = 'lib'
 
   spec.add_dependency 'dragonfly', '~> 1.0'
-  spec.add_dependency 'taglib-ruby', '~> 1.0'
+  spec.add_dependency 'taglib-ruby', '~> 2.0'
   spec.add_dependency 'base64'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'rake', '~> 10.4'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'guard'
   spec.add_development_dependency 'guard-minitest'
   spec.add_development_dependency 'minitest'
