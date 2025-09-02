@@ -15,6 +15,8 @@ jobs:
       - uses: actions/checkout@v5
       - name: Install taglib
         run: sudo apt-get install libtag1-dev
+      - name: Check taglib version
+        run: apt list --installed | grep libtag
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.5
