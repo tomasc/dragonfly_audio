@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: |
-        apt-get update
-        apt-get install -y libtag-dev
+          apt-get update
+          apt-get install -y libtag-dev
       - run: apt list --installed | grep libtag
       - run: bundle install
       - run: bundle exec rake
