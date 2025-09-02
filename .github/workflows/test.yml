@@ -8,17 +8,12 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
+    container: ruby:3.4.5-slim
 
     steps:
       - uses: actions/checkout@v5
-      - name: Install taglib
-        run: sudo apt-get install libtag1-dev
-      - name: Check taglib version
-        run: apt list --installed | grep libtag
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.4.5
-      - name: Run tests
-        run: bundle exec rake
+      - run: sudo apt-get install libtag1-dev
+      - run: apt list --installed | grep libtag
+      - run: bundle install
+      - run: bundle exec rake
