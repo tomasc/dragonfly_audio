@@ -12,12 +12,8 @@ jobs:
     container: ruby:3.4.5-slim
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Install taglib
-        run: |
-          apt-get update
-          apt-get install -y --no-install-recommends build-essential pkg-config git ca-certificates curl
-          apt-get install -y libtag-dev
+      - uses: actions/checkout@v5
+      - run: sudo apt-get install libtag1-dev
+      - run: apt list --installed | grep libtag
       - run: bundle install
-      - name: Run tests
-        run: bundle exec rake
+      - run: bundle exec rake
