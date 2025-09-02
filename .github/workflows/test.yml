@@ -17,7 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - run: apt-get install libtag-dev
+      - run: |
+        apt-get update
+        apt-get install -y libtag-dev
       - run: apt list --installed | grep libtag
       - run: bundle install
       - run: bundle exec rake
