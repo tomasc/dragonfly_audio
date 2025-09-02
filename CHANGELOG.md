@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.0
+
+- support `taglib-ruby` `2.0` – [@asgerb](https://github.com/asgerb).
+
 ## 1.1.0
 
 - support `taglib-ruby` `1.0` – [@asgerb](https://github.com/asgerb).
